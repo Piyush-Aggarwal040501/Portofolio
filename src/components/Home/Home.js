@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
@@ -25,14 +24,21 @@ function Home() {
                 <strong className="main-name"> Piyush Aggarwal </strong>
               </h1>
 
-              <div style={{ padding: 50, textAlign: "left" }}>
+              <div style={{ padding: "20px 0px", textAlign: "left" }}>
                 <Type />
               </div>
+              <h5 style={{ padding: "20px 0px", textAlign: "left" }}>
+                Gmail : 
+                <strong className="main-name">  piyush.aggarwal.040501@gmail.com</strong>
+              </h5>
+              <a href="https://drive.google.com/file/d/19HC4SsncFl33fxLO_zaZTE2g7Xi16gd5/view?usp=sharing" target="_blank" className="btn-resume">
+                Resume
+              </a>
             </Col>
 
-            <Col md={5} style={{ paddingBottom: 20 }}>
-              <img
-                src={homeLogo}
+            <Col md={5} style={{ padding: 20 }}>
+              <img id="piyush-image"
+                src="/piyush.jpg"
                 alt="home pic"
                 className="img-fluid"
                 style={{ maxHeight: "450px" }}
