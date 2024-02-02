@@ -2,91 +2,55 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/leaf.png";
-import emotion from "../../Assets/Projects/emotion.png";
-import editor from "../../Assets/Projects/codeEditor.png";
-import chatify from "../../Assets/Projects/chatify.png";
-import suicide from "../../Assets/Projects/suicide.png";
-import bitsOfCode from "../../Assets/Projects/blog.png";
+import trenders from "../../Assets/Projects/trenders.png";
+import codingBlocks from "../../Assets/Projects/codingBlocks.png";
+import myExpenses from "../../Assets/Projects/myExpenses.png";
+import moviesGrid from "../../Assets/Projects/moviesGrid.png";
+
 
 function Projects() {
+  const projectArray = [
+    {name:"trenders",imgPath:trenders,ghLink:"https://github.com/Piyush-Aggarwal040501/trenders_server",demoLink:"https://fabulous-sopapillas-0210c7.netlify.app/",description:[
+      "A full stack E-Commerce site made using MERN stack.",
+      "Enhance security by verifying users via Gmail OTP, ensuring a seamless and robust authentication process.",
+      "Admin Pannel for admin to edit,delete or add new products",
+      "search Bar for user to search for theri particular products",
+      "Integrated with razorpay for online transaction"
+    ]},
+    {name:"Coding Blocks",imgPath:codingBlocks,ghLink:"https://github.com/Piyush-Aggarwal040501/CodingBlocks",demoLink:"",description:[
+      "A Responsive web application like GFG for searching article made using Node.js and MySql.",
+      "Search bar for users to search any article and also can request to improve and article",
+      "Admin Pannel so admin can approve the users suggestion to improve the articles"
+    ]},
+    {name:"Movies Grid",imgPath:moviesGrid,ghLink:"https://github.com/Piyush-Aggarwal040501/movies-grid",demoLink:"https://peaceful-gumption-e52210.netlify.app/",description:[
+      "Responsive web application for searching movies made using React.js",
+      "Search bar to search for any movies and when click on it modal opens and show the description of the movie"
+    ]},
+    {name:"My Expenses",imgPath:myExpenses,ghLink:"https://github.com/Piyush-Aggarwal040501/my-expenses",demoLink:"https://melodious-blini-abd1f9.netlify.app/",description:[
+      "A simple expense tracking site made using HTML, CSS and Javascript",
+      "We can add income and expenses and it will be added and on top  we get how much amount we are left with"
+    ]},
+
+  ]
   return (
     <Container fluid className="project-section">
       <Particle />
       <Container>
         <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
+          My Recent <strong className="main-text">Works </strong>
         </h1>
-        <p style={{ color: "white" }}>
+        <h5 style={{ color: "white" }}>
           Here are a few projects I've worked on recently.
-        </p>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={chatify}
-              isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/soumyajit4419/Chatify"
-              demoLink="https://chatify-49.web.app/"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={bitsOfCode}
-              isBlog={false}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
-              demoLink="https://blogs.soumya-jit.tech/"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={editor}
-              isBlog={false}
-              title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/soumyajit4419/Editor.io"
-              demoLink="https://editor.soumya-jit.tech/"              
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={leaf}
-              isBlog={false}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              ghLink="https://github.com/soumyajit4419/Plant_AI"
-              demoLink="https://plant49-ai.herokuapp.com/"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={suicide}
-              isBlog={false}
-              title="Ai For Social Good"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
-              ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
-              // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={emotion}
-              isBlog={false}
-              title="Face Recognition and Emotion Detection"
-              description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%.
-              Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-              ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
-              // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here 
-            />
-          </Col>
+        </h5>
+        <br />
+        <Row style={{ justifyContent: "spaceBetween", paddingBottom: "10px" }}>
+          {projectArray.map((item)=>(
+            <Col md={6} className="project-card">
+              <ProjectCard
+                name={item.name} imgPath={item.imgPath} ghLink={item.ghLink} demoLink={item.demoLink} description={item.description}
+              />
+            </Col>
+          ))}
         </Row>
       </Container>
     </Container>

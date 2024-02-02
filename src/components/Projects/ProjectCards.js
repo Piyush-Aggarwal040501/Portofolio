@@ -4,28 +4,32 @@ import Button from "react-bootstrap/Button";
 import { CgWebsite } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
 
-function ProjectCards(props) {
+function ProjectCards({name,imgPath,ghLink,demoLink,description}) {
   return (
     <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
+      <Card.Img variant="top" src={imgPath} alt="card-img" />
       <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
+        <Card.Title>{name}</Card.Title>
         <Card.Text style={{ textAlign: "justify" }}>
-          {props.description}
+          <ul>
+            {description.map((item)=>(
+              <li>{item}</li>
+            ))}
+          </ul>
         </Card.Text>
-        <Button variant="primary" href={props.ghLink} target="_blank">
+        <Button className="btn" href={ghLink} target="_blank">
           <BsGithub /> &nbsp;
-          {props.isBlog ? "Blog" : "GitHub"}
+          Github
         </Button>
         {"\n"}
         {"\n"}
 
         {/* If the component contains Demo link and if it's not a Blog then, it will render the below component  */}
 
-        {!props.isBlog && props.demoLink && (
+        {demoLink && (
           <Button
             variant="primary"
-            href={props.demoLink}
+            href={demoLink}
             target="_blank"
             style={{ marginLeft: "10px" }}
           >
