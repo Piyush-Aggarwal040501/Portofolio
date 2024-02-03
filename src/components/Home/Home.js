@@ -31,7 +31,7 @@ function Home() {
                 Gmail : 
                 <strong className="main-name">  piyush.aggarwal.040501@gmail.com</strong>
               </h5>
-              <a href="https://drive.google.com/file/d/19HC4SsncFl33fxLO_zaZTE2g7Xi16gd5/view?usp=sharing" target="_blank" className="btn-resume">
+              <a href="https://drive.google.com/file/d/11CIuRFX49eoxt3Ewr2-cd7dv88IiJ_KU/view?usp=sharing" target="_blank" className="btn-resume">
                 Resume
               </a>
             </Col>
